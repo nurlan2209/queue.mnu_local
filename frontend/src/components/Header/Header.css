@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #1A2D6B;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --light-blue: #D6EAFF;
+}
+
+.header {
+  background-color: var(--light-blue);
+  box-shadow: 0 1px 3px var(--shadow-color);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 42px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.language-switcher {
+  position: relative;
+}
+
+.language-text {
+  color: var(--primary-color);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chevron-icon {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+  color: var(--primary-color);
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 0.25rem 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.language-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.language-menu li:last-child {
+  border-bottom: none;
+}
+
+.language-menu button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.language-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive Mobile */
+@media (max-width: 576px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .logo-image {
+    height: 30px;
+    width: auto;
+  }
+
+  .language-switcher {
+    margin-right: 0;
+    align-self: center;
+  }
+
+  .language-text {
+    color: #1A2D6B; /* Синий вместо красного */
+    font-weight: 600;
+  }
+
+  .form-title-main {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #1A2D6B;
+  }
+
+  .form-description {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #5e5e5e;
+    margin-bottom: 1.5rem;
+  }
+}
+

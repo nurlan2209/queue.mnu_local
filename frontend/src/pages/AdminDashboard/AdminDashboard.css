@@ -1,0 +1,39 @@
+/* AdminDashboard.css */
+.admin-dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  flex: 1;
+  transition: background-color 0.3s;
+}
+
+.tab-btn:hover {
+  background-color: rgba(63, 81, 181, 0.1);
+}
+
+.tab-btn.active {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.dashboard-content {
+  margin-top: 20px;
+}

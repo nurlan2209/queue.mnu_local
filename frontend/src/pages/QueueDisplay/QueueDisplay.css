@@ -1,0 +1,359 @@
+/* QueueDisplay.css - Обновленная версия с цветами для программ */
+
+.queue-display {
+  background-color: #F6F6F6;
+  color: #0A1F44;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+.display-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.header-texts {
+  max-width: 100%;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #0A1F44;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.sub-title {
+  font-size: 2rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  color: #0A1F44;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.wait-message {
+  background-color: #001965;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 15px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.fixed-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 60px;
+  object-fit: contain;
+  z-index: 9999;
+}
+
+.queue-entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.queue-card {
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  color: black; 
+  width: 350px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* ЦВЕТА ДЛЯ ПРОГРАММ (заменяют старые цвета статусов) */
+
+/* Бакалавриат - синий */
+.card-blue {
+  background-color: #D6EAFF;
+  border-color: #90C5FF;
+}
+
+/* Магистратура - зеленый */
+.card-green {
+  background-color: #DFFFD6;
+  border-color: #90FF90;
+}
+
+/* Докторантура - фиолетовый */
+.card-purple {
+  background-color: #F9D6FF;
+  border-color: #E090FF;
+}
+
+/* ТЕКСТОВЫЕ ЦВЕТА ДЛЯ ПРОГРАММ */
+
+.text-blue {
+  color: #1A2D6B;
+}
+
+.text-green {
+  color: #2D5B1A;
+}
+
+.text-purple {
+  color: #6B1A6B;
+}
+
+.queue-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.queue-card-values {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.queue-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.desk-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.desk-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.consultant-name {
+  font-size: 1.03rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+  line-height: 1.1;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.divider {
+  width: 1.5px;
+  height: 70px;
+  background: currentColor;
+  margin: 0 16px;
+}
+
+.fixed-time {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #001965;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.9rem;
+  z-index: 9999;
+}
+
+.video-section {
+  margin-top: 30px;
+  align-self: flex-end;
+  width: 100%;
+  max-width: 500px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* НОВЫЕ СТИЛИ: Индикаторы программ */
+.queue-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 12px 12px 0 0;
+}
+
+.queue-card {
+  position: relative;
+}
+
+.card-blue::before {
+  background: linear-gradient(90deg, #1A2D6B, #4A6B9B);
+}
+
+.card-green::before {
+  background: linear-gradient(90deg, #2D5B1A, #5B8B4A);
+}
+
+.card-purple::before {
+  background: linear-gradient(90deg, #6B1A6B, #9B4A9B);
+}
+
+/* НОВЫЕ СТИЛИ: Программные бейджи на карточках */
+.program-type-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.program-type-badge.bachelor {
+  background-color: #1A2D6B;
+  color: #D6EAFF;
+}
+
+.program-type-badge.master {
+  background-color: #2D5B1A;
+  color: #DFFFD6;
+}
+
+.program-type-badge.doctorate {
+  background-color: #6B1A6B;
+  color: #F9D6FF;
+}
+
+/* ХОВЕР ЭФФЕКТЫ для карточек */
+.queue-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-blue:hover {
+  box-shadow: 0 8px 16px rgba(26, 45, 107, 0.2);
+}
+
+.card-green:hover {
+  box-shadow: 0 8px 16px rgba(45, 91, 26, 0.2);
+}
+
+.card-purple:hover {
+  box-shadow: 0 8px 16px rgba(107, 26, 107, 0.2);
+}
+
+/* АНИМАЦИЯ появления карточек */
+.queue-card {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* СПЕЦИАЛЬНЫЕ ЭФФЕКТЫ для текущих заявок */
+.queue-card.current-processing {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  border-width: 3px;
+}
+
+.queue-card.current-processing::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .wait-message {
+    font-size: 0.95rem;
+  }
+
+  .fixed-time {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .queue-number,
+  .desk-number {
+    font-size: 2.5rem;
+  }
+
+  .divider {
+    height: 50px;
+  }
+
+  .video-section {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .queue-card {
+    width: 100%;
+    min-width: 250px;
+  }
+
+  .program-type-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+}
