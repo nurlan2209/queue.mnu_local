@@ -242,6 +242,24 @@ const EmployeeStatusControl = () => {
     return statusMap[statusValue] || t('employeeStatus.unknown');
   };
 
+  // Функция для перевода образовательных программ
+  const translatePrograms = (programs) => {
+    if (!programs) return '-';
+    const programKeys = Array.isArray(programs) ? programs : [programs];
+    const translated = programKeys.map(program => {
+      const key = `publicQueueForm.programs.bachelor.${program}`; // Предполагаем бакалавриат по умолчанию
+      let translatedText = t(key);
+      if (translatedText === key) {
+        // Если перевод не найден в бакалавриате, проверяем магистратуру и докторантуру
+        const masterKey = `publicQueueForm.programs.master.${program}`;
+        const doctorateKey = `publicQueueForm.programs.doctorate.${program}`;
+        translatedText = t(masterKey) !== masterKey ? t(masterKey) : t(doctorateKey) !== doctorateKey ? t(doctorateKey) : program;
+      }
+      return translatedText;
+    });
+    return translated.join(', ');
+  };
+
   return (
     <div className="employee-status-control">
       <div className="status-header">
@@ -265,6 +283,7 @@ const EmployeeStatusControl = () => {
             <p><strong>ФИО:</strong> {calledApplicant.full_name}</p>
             <p><strong>Телефон:</strong> {calledApplicant.phone}</p>
             <p><strong>Стол:</strong> {calledApplicant.employee_desk}</p>
+            <p><strong>Образовательная программа:</strong> {translatePrograms(calledApplicant.programs)}</p>
             {calledApplicant.speech && calledApplicant.speech.text && (
               <p><strong>Объявление:</strong> {calledApplicant.speech.text}</p>
             )}
@@ -327,14 +346,14 @@ const EmployeeStatusControl = () => {
               disabled={actionLoading}
               title="Уйти на перерыв после завершения с текущим абитуриентом"
             >
-              {actionLoading ? 'Пауза...' : '⏸️ Пауза после завершения'}
+              {actionLoading ? 'Пауза...' : 'Пауза после завершения'}
             </button>
           </div>
         )}
 
         {status.status === 'paused' && (
           <div className="paused-actions">
-            <p className="pause-info">🔔 На паузе. Автовызов отключен.</p>
+            <p className="pause-info"> На паузе. Автовызов отключен.</p>
             <button
               className="btn btn-primary"
               onClick={handleResumeWork}

@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ProgramTranslator from '../ProgramTranslator/ProgramTranslator';
 import { getProgramCategoryFromArray, getProgramColors, getProgramCSSClasses } from '../../utils/programColors';
+import { FaUser, FaPhoneAlt, FaGraduationCap, FaClock } from 'react-icons/fa'; 
 import './QueueTicket.css';
 
 const QueueTicket = ({ ticket, onReturn }) => {
@@ -117,10 +118,10 @@ const QueueTicket = ({ ticket, onReturn }) => {
       {/* Информация */}
       <div className="ticket-info">
         <div className="info-card">
-          <i className="fa-solid fa-user"></i> {ticket.full_name}
+          <FaUser className="field-icon" /> {ticket.full_name}
         </div>
         <div className="info-card">
-          <i className="fa-solid fa-phone"></i> {ticket.phone}
+          <FaPhoneAlt className="field-icon" /> {ticket.phone}
         </div>
         
         {/* Карточка с программой - тоже цветная */}
@@ -132,7 +133,7 @@ const QueueTicket = ({ ticket, onReturn }) => {
             color: programColors.text
           }}
         >
-          <i className="fa-solid fa-graduation-cap"></i>
+          <FaGraduationCap className="field-icon" />{' '}
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <span className={`program-indicator ${programCategory}`}></span>
             {Array.isArray(ticket.programs) ? (
@@ -151,7 +152,7 @@ const QueueTicket = ({ ticket, onReturn }) => {
         </div>
         
         <div className="info-card">
-          <i className="fa-regular fa-clock"></i> {formatDate(ticket.created_at)}
+          <FaClock className="field-icon" /> {formatDate(ticket.created_at)}
         </div>
       </div>
 
