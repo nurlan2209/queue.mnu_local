@@ -281,6 +281,16 @@
     "step5": "Егер қажет болса, 'Кезекті болдырмау' батырмасын басып, кезекті болдыруға болады"
   },
   "admissionDashboard": {
+    "currentApplicant": "Қазіргі талапкер",
+    "number": "Нөмірі",
+    "fullName": "Аты-жөні",
+    "phone": "Телефон",
+    "desk": "Үстел",
+    "program": "Білім беру бағдарламасы",
+    "announcement": "Хабарлама",
+    "completeCurrent": "Ағымдағыны аяқтау",
+    "pauseAfterComplete": "Аяқтағаннан кейін үзіліс",
+    "announcementTemplate": "{{queue}} нөмірлі талон, {{desk}} үстелге өтіңіз",
     "title": "Кезекті басқару панелі",
     "instructionsTitle": "Нұсқаулық",
     "queueManagementTitle": "Кезекті басқару:",

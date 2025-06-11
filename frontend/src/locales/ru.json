@@ -284,6 +284,16 @@
     "step5": "При необходимости вы можете отменить свою очередь нажав кнопку 'Отменить очередь'"
   },
   "admissionDashboard": {
+    "currentApplicant": "Текущий абитуриент",
+    "number": "Номер",
+    "fullName": "ФИО",
+    "phone": "Телефон",
+    "desk": "Стол",
+    "program": "Образовательная программа",
+    "announcement": "Объявление",
+    "completeCurrent": "Завершить с текущим",
+    "pauseAfterComplete": "Пауза после завершения",
+    "announcementTemplate": "Талон номер {{queue}}, пройдите к столу {{desk}}",
     "title": "Панель управления очередью",
     "instructionsTitle": "Инструкция",
     "queueManagementTitle": "Управление очередью:",

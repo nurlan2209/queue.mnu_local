@@ -286,6 +286,16 @@
     "step5": "If needed, you can cancel your queue by clicking the 'Cancel Queue' button"
   },
   "admissionDashboard": {
+    "currentApplicant": "Current Applicant",
+    "number": "Number",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "desk": "Desk",
+    "program": "Educational Program",
+    "announcement": "Announcement",
+    "completeCurrent": "Complete Current",
+    "pauseAfterComplete": "Pause After Completion",
+    "announcementTemplate": "Ticket number {{queue}}, please proceed to desk {{desk}}",
     "title": "Queue Management Dashboard",
     "instructionsTitle": "Instructions",
     "queueManagementTitle": "Queue Management:",
